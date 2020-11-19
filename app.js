@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 /*Filter Server and Require for Socket io*/
 const PORT = process.env.PORT || 5555;
 const server = app.listen(PORT, () => {
-    console.log(`App running on port ${PORT}`);
+  console.log(`App running on port ${PORT}`);
 });
 // const io = socket(server);
 
@@ -26,13 +26,13 @@ const server = app.listen(PORT, () => {
 //use session
 app.set("trust proxy", 1); // trust first proxy
 app.use(session({
-    key: 'user_sid',
-    secret: 'kSAFoYmuoJbkAfxN2AIvHVryrscmSOkDfjiotjhoogkpon;kg;,te,alfkaglp[,mmfoplhgma,el;hn,',
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-        expires: 600000000
-    }
+  key: 'user_sid',
+  secret: 'kSAFoYmuoJbkAfxN2AIvHVryrscmSOkDfjiotjhoogkpon;kg;,te,alfkaglp[,mmfoplhgma,el;hn,',
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    expires: 600000000
+  }
 }));
 
 //use bodyParser
@@ -52,7 +52,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /*  Google AUTH  */
 
-const GOOGLE_CLIENT_ID ="208922727243-chcjrc4uu520omqom1csgobhagoli40i.apps.googleusercontent.com";
+const GOOGLE_CLIENT_ID = "208922727243-chcjrc4uu520omqom1csgobhagoli40i.apps.googleusercontent.com";
 const GOOGLE_CLIENT_SECRET = "clU0mrAKbXhmzPl2ONsu1S3q";
 
 passport.use(
@@ -77,7 +77,7 @@ passport.deserializeUser(function (obj, cb) {
   cb(null, obj);
 });
 
-app.get("/auth/google",passport.authenticate("google", { scope: ["profile", "email"] })
+app.get("/auth/google", passport.authenticate("google", { scope: ["profile", "email"] })
 );
 
 app.get("/auth/google/callback", passport.authenticate("google", { failureRedirect: "/" }),
@@ -93,23 +93,25 @@ app.get("/auth/google/callback", passport.authenticate("google", { failureRedire
 const homeSenderRouter = require("./routes/homeSenderController");
 
 //กำหนดตัวแปรให้ controller
-app.use("/homeSender",isLoggedIn, homeSenderRouter);
+app.use("/homeSender", isLoggedIn, homeSenderRouter);
 
 
-// catch 404 and forward to error handler
-app.use(function (req, res, next) {
-  next(createError(404));
-});
+
 
 // error handler
 app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-
   // render the error page
-  res.status(err.status || 500);
-  res.render('500error');
+  if (err) {
+    console.log("APP Error =>>>>> ",err);
+    res.status(err.status || 500);
+    res.render('500error');
+
+  } 
+  next()
+
 });
 
 
@@ -117,17 +119,18 @@ app.use(function (err, req, res, next) {
 function isLoggedIn(req, res, next) {
 
   if (req.session.profile && req.cookies.user_sid) {
-      next();
+    next();
   } else {
-      console.log('isNotLoggin')
-      res.redirect("/");
+    console.log('isNotLoggin')
+    res.redirect("/");
   }
 };
 
 /* login */
 
-app.get("/", function(req, res) {
+app.get("/", function (req, res) {
   res.render("login");
+  console.log("5555555555");
 });
 
 let userProfile;
@@ -139,33 +142,29 @@ app.get("/profile", (req, res) => {
 });
 app.get("/error", (req, res) => res.send("error logging in"));
 
-
-
-
-
 passport.use(new GoogleStrategy({
-      clientID: GOOGLE_CLIENT_ID,
-      clientSecret: GOOGLE_CLIENT_SECRET,
-      callbackURL: "http://localhost:5555/auth/google/callback"
+  clientID: GOOGLE_CLIENT_ID,
+  clientSecret: GOOGLE_CLIENT_SECRET,
+  callbackURL: "http://localhost:5555/auth/google/callback"
 
-  },
-  function(accessToken, refreshToken, profile, done) {
-      userProfile = profile;
+},
+  function (accessToken, refreshToken, profile, done) {
+    userProfile = profile;
 
-      return done(null, userProfile);
+    return done(null, userProfile);
   },
-  function(accessToken, refreshToken, profile, done) {
-      userProfile = profile;
-      return done(null, userProfile);
+  function (accessToken, refreshToken, profile, done) {
+    userProfile = profile;
+    return done(null, userProfile);
   }
 ));
 
 // route for logging out
-app.get("/logout", function(req, res) {
-  req.session.destroy(function(err) {
-      userProfile = null;
-      req.logout();
-      res.redirect("/");
+app.get("/logout", function (req, res) {
+  req.session.destroy(function (err) {
+    userProfile = null;
+    req.logout();
+    res.redirect("/");
   });
 });
 
