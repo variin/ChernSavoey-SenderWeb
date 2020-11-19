@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <head>
+    <!-- Site meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title> </title>
+    <!-- CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/profile.css">
+    <!--===============================================================================================-->
+  </head>
+</head>
+
+<body>
+  <%- include ("layout.ejs") %>
+
+  <div class="container-login100">
+    <div class="wrap-login100">
+      <img src="<%= user.photos[0].value %>" class="img-responsive" alt="UserProfile_Photo" />
+      <div class="userName">
+        <h4 class="userName"><%= user.displayName %></h4>
+      </div>
+      <div class="id" style="padding-right: 50px;">
+        <p>User ID: <%= user.id %></p>
+      </div>
+      <div class=" email" style="padding-right: 5px;">
+        <p>E-mail: <%= user.emails[0].value %></p>
+      </div>
+      <div class="firstName" style="padding-right: 50px;">
+        <p>First Name: <%= user.name.givenName %></p>
+      </div>
+      <div class="lastName" style="padding-right: 50px;">
+        <p>Last Name: <%= user.name.familyName %></p>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
