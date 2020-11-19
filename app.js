@@ -3,12 +3,37 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 // const socket = require('socket.io');
-// const session = require('express-session');
+const session = require('express-session');
 const bodyParser = require('body-parser')
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const passport = require('passport');
 const db = require('./model/db')
 const app = express();
+
+//use bodyParser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+
+/*Filter Server and Require for Socket io*/
+const PORT = process.env.PORT || 5555;
+const server = app.listen(PORT, () => {
+    console.log(`App running on port ${PORT}`);
+});
+// const io = socket(server);
+
+
+//use session
+app.set("trust proxy", 1); // trust first proxy
+app.use(session({
+    key: 'user_sid',
+    secret: 'kSAFoYmuoJbkAfxN2AIvHVryrscmSOkDfjiotjhoogkpon;kg;,te,alfkaglp[,mmfoplhgma,el;hn,',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        expires: 600000000
+    }
+}));
 
 //use bodyParser
 app.use(bodyParser.json());
@@ -27,15 +52,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /*  Google AUTH  */
 
-const GOOGLE_CLIENT_ID =
-  "208922727243-chcjrc4uu520omqom1csgobhagoli40i.apps.googleusercontent.com";
+const GOOGLE_CLIENT_ID ="208922727243-chcjrc4uu520omqom1csgobhagoli40i.apps.googleusercontent.com";
 const GOOGLE_CLIENT_SECRET = "clU0mrAKbXhmzPl2ONsu1S3q";
 
 passport.use(
   new GoogleStrategy({
     clientID: GOOGLE_CLIENT_ID,
     clientSecret: GOOGLE_CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/google/callback",
+    callbackURL: "http://localhost:5555/auth/google/callback",
   },
     function (accessToken, refreshToken, profile, done) {
       return done(null, profile);
@@ -53,9 +77,7 @@ passport.deserializeUser(function (obj, cb) {
   cb(null, obj);
 });
 
-app.get(
-  "/auth/google",
-  passport.authenticate("google", { scope: ["profile", "email"] })
+app.get("/auth/google",passport.authenticate("google", { scope: ["profile", "email"] })
 );
 
 app.get("/auth/google/callback", passport.authenticate("google", { failureRedirect: "/" }),
@@ -124,7 +146,7 @@ app.get("/error", (req, res) => res.send("error logging in"));
 passport.use(new GoogleStrategy({
       clientID: GOOGLE_CLIENT_ID,
       clientSecret: GOOGLE_CLIENT_SECRET,
-      callbackURL: "http://localhost:3000/auth/google/callback"
+      callbackURL: "http://localhost:5555/auth/google/callback"
 
   },
   function(accessToken, refreshToken, profile, done) {
@@ -137,11 +159,6 @@ passport.use(new GoogleStrategy({
       return done(null, userProfile);
   }
 ));
-
-
-//
-
-
 
 // route for logging out
 app.get("/logout", function(req, res) {

@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400&display=swap');
+
+
+.list-item__thumbnail {
+  width: 30px;
+}
+
+.navbar {
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+#top {
+  background-image: linear-gradient(to right, #1d617a, #61c2a2);
+}
+
+.navbar.fixed-bottom {
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+#bottom {
+  background-color:#143130 !important;
+  font-family: kanit;
+  color: aliceblue;
+}
+
+.appname {
+  font-family: kanit;
+  font-size: 30px;
+  text-indent: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: aliceblue;
+}
+/* .col-lg-4.col-md-6.mb-4 {
+  margin-top: 97px;
+  
+} */
+
+/* .nav-link {
+  color: aliceblue;
+  font-family: kanit;
+  text-indent: 20px;
+} */
+
+/* .navbar .navbar-light.bg-light {
+
+} */
+
+/* Style the links inside the navigation bar */
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 1px;
+  text-decoration: none;
+  font-size: 17px;
+  margin-left: 20px;
+}
+
+/* Change the color of links on hover */
+.navbar a:hover {
+    color: aliceblue;
+    text-decoration: none;
+}
+
+/* #search {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+} */
+
+.form-control {
+  width: 50% !important;
+}
