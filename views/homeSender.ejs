@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <!-- Site meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title> </title>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/stylesheets/homeSender.css">
+    <!--===============================================================================================-->
+
+</head>
+
+<%- include ("layout.ejs") %>
+
+    <body>
+
+        <div class="container">
+            <% getOrder.forEach((order) => { %>
+                <div class="card-deck">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= order.store %>
+                            </h5>
+                            <p class="card-text">Order id :
+                                <%= order.orderId %>
+
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted"><%= order.hour %> | <%= order.userDate %></small>
+                            <a href="/homeSender/<%= order.orderId %>" class="btn btn-info float-right">
+            See More
+          </a>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+        </div>
+
+        <!-- Scripts -->
+        <script src="/javascripts/homeSender.js"></script>
+    </body>
+
+
+</html>

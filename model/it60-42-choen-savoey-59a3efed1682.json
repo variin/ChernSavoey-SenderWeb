@@ -1,0 +1,13 @@
+{
+    "type": "service_account",
+    "project_id": "it60-42-choen-savoey",
+    "private_key_id": "59a3efed16828a52cc10ccfa9d0d626a98f1f726",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC0nt0X9XNNLj/X\nBNdeW58orKOE/RSfZwyHR/SfJAmSqi4xsJrMkFkYbmmZBK3vazOprq5eeDtcODV9\nA7MID7zQQRb08jUWWRpkdC/Q3NhCZ1mAUZ6Tvta7pIXzg8KK8ToBZp9f254H1Fw1\n4YQwxOqXyteQcHznasLJQU5yB+LvJn4bCGFjyCNHU956d+EtU/xxErI3EEQsPDmj\nAFDlbshXjO3QQku50rGd/qIZwFKLROflKnu9E66E/Qm2rVSlP3jlXjvEu1+f/NSm\n9aQEthkX9ETXMjxcxboRBvwcVQfu8G5NNg/gziN1Jd1zc9XQeh9yYjOpeI+nlbtr\n81vLYfr9AgMBAAECgf9q8BoOg6K8lWJx3A1oLt66Aw5u8X/prWgj62Ki1jVK53c3\nD87tnW2JGUBgTKvZ4Xc676OQSyEg8pzAc2hg7zdJYHtKwiRNvGPMQT0Z/cbJifjO\nP2U9nkWUZP+XLb5H182jfNgKvb14P9S+1t4iUIvHuat49KqYiF4d7WkSScBxAbYz\nT2OCc9GYxOcqgcQMmcb6wJXOu7abAXblmHqeMRGC/6AW7FL69Zv439IqMuA2doz7\nlxobgwEVIeWRq3JTxgrunmDf82YEw5/hZtSUnZQLCwk+Ys5v9st2dv3L1NcuR6fY\nQUwDvMQKIMlPiL1dkniXF+jCuT2IGGHyxPgoIoECgYEA+o9hzSTEnqMLIW0L658B\nTFBrb1Od375BMrXbZLvuVaienIkR2beMJv6NhgGznFn2YU4Xj9oDYHcaSWlFKcOx\n9a6iDDmi3yUElXawOkHB9XBPKtWI4hjs4Shzmsa8pChHfa2SHpIqUIz4iav6yiZy\n1T4kQoGONrqOE+rb5J/JKVkCgYEAuIrBnxMObDy0QAUq+6HrgrAhFapJ4tgVGfSo\nAOagyGnoIrHkFF4erDuFGn6nzAAQsTSP64OZZIphg00Zia2Mrgor/he9Z/NeCJJR\nkYxIUiVmbEHHuM857GCuADsavoUAV6z9yrTUz9qO/EaRVX/6eDv+UdtwemDzr+bT\nCADHxkUCgYB/iaJfuJp4oUdWIVqS+eHARaMaDLbsn7wyIs1lDh/37BeoWEEE0F//\nrUy+bHlPWZ+G0ig+KdvUK2vu+C2jX6BjDRwhGuljqkUWC08SqEwhMaSqifzeEY/p\n4BxQKV72NCaHu2UIOKBfVhJgiXDjmwSStMniLG4GP5l4W/DIA+lyKQKBgQCCCSRO\nVzs+gbfxtLKJBZvSRxHJFmlh8ylLVN5dZCW/kwEEEZ3JzFiIvJgaB01trk4U0Bjp\nt52K/wefYeCw5x3ONVSygz/v08la+N+JU/RSDhCSD/gP/dWu/qEdgIhj34xSO4/K\nGooqvLMsiP035io0NvIJ9DrZwR91v4zMguBCkQKBgQCEgXleRyP/DJicSHXh5kia\nuFR+2mhYfHuGbSHiSkKoJDngi/C+jEg2x+iXrkpEr+BfPWrS6NjSx8JzRcTOSxC0\nkQO9oQJq6UrsUKQqtqHyBwowl92oE17+EeJIqP0Z7A0UrvV6QivBU82TNoFv96t0\n7hb5g8tKzn6jBfs1QhnnkQ==\n-----END PRIVATE KEY-----\n",
+    "client_email": "it60-42-choen-savoey@appspot.gserviceaccount.com",
+    "client_id": "115522177389750662168",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/it60-42-choen-savoey%40appspot.gserviceaccount.com"
+  }
+  
