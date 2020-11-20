@@ -1,4 +1,4 @@
-const socket = io.connect("http://localhost:8080");
+const socket = io.connect("http://localhost:5555");
 let username = document.querySelector('#username');
 let usernameBtn = document.querySelector('#usernameBtn');
 let curUsername = document.querySelector('.card-header');
