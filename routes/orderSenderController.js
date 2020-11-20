@@ -3,6 +3,11 @@ const db = require('../model/db');
 
 var router = express.Router();
 
+router.get('/myOreder', async function(req, res, next) {
+
+    res.render('orderSender');
+});
+
 router.get('/:orderId', async function(req, res, next) {
     console.log("------------" + req.params.orderId);
     const getOrder = await db

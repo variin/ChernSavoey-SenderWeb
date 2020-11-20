@@ -139,3 +139,20 @@
     .storeName{
         color: rgb(68, 68, 75);
     }
+
+    /* ------ */
+
+    .card-title{
+        font-size: 17px; 
+        display: inline;
+    }
+
+    .menu{
+        font-size:17px; 
+        text-align: center; 
+        display: inline;
+    }
+
+    .card-text{
+        display: inline; 
+    }
