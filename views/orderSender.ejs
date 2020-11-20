@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Kanit:400,300&subset=thai,latin' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/profile.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/orderSender.css">
+
+</head>
+
+<body>
+
+    <%- include ("layout.ejs") %>
+        <div class="container font">
+            <% getOrder.forEach((order) => { %>
+                <div class="d-flex justify-content-center">
+                    <ul>
+                        <li>
+                            <a>
+                                <h2>Menu</h2>
+                                <h2 class="storeName">Store :
+                                    <%= order.store%>
+                                </h2>
+
+                                <!-- table head -->
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div style="margin-left: 50px;">Menu</div>
+                                        </td>
+                                        <td>
+                                            <div style="margin-left: 60px;">Quantity</div>
+                                        </td>
+                                        <td>
+                                            <div style="margin-left: 35px;">Price</div>
+                                        </td>
+                                    </tr>
+
+                                </table>
+
+
+
+                                <h5 class="card-title" style="font-size: 17px; display: inline;"> </h5>
+
+                                <div class="menu" style="font-size:17px; text-align: center; display: inline;">
+                                    <h3 class="card-text" style="display: inline;">
+                                        <div style="margin-left: 25%; display: inline;">
+
+                                        </div>
+                                        <div style="margin-left: 25%; display: inline;">
+
+                                        </div>
+
+                                    </h3>
+                                </div>
+
+                                <br>
+                                <br>
+
+                                <table style="font-family: Kanit;">
+                                    <tr>
+                                        <td style="color: dimgrey;">Delivery Fee</td>
+                                        <td style="color: dimgrey;">
+                                            <div style="margin-left: 140px;">10</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div style="margin-left: 80px;">Total :</div>
+                                        </td>
+                                        <td>
+                                            <div style="margin-left: 70px;">... Baht</div>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <br>
+
+                                <div style="text-align: center;">
+
+                                </div>
+                        </li>
+                    </ul>
+
+                    <% }); %>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                    <div class="buttonUpdate">
+                        <button type="button" class="btn btn-warning" onclick="updateStatus()">Update Status</button>
+                    </div>
+                </div>
+        </div>
+        <!-- Sweetalret2 script -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script src="/javascripts/orderSender.js"></script>
+</body>
+
+</html>

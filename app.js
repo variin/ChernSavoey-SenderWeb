@@ -91,9 +91,14 @@ app.get("/auth/google/callback", passport.authenticate("google", { failureRedire
 
 //ดึง controller มาใช้
 const homeSenderRouter = require("./routes/homeSenderController");
+const orderSenderRouter = require("./routes/orderSenderController");
+const chatRouter = require("./routes/chatController");
+
 
 //กำหนดตัวแปรให้ controller
 app.use("/homeSender", isLoggedIn, homeSenderRouter);
+app.use("/orderSender", isLoggedIn, orderSenderRouter);
+app.use("/chat", isLoggedIn, chatRouter);
 
 
 
@@ -165,6 +170,36 @@ app.get("/logout", function (req, res) {
     userProfile = null;
     req.logout();
     res.redirect("/");
+  });
+});
+
+//socket.io
+app.get("/chat", (req, res) => {
+  res.render("chat");
+});
+
+// Initialize socket for the server
+io.on("connection", (socket) => {
+  console.log("New user connected");
+
+  socket.username = "Anonymous";
+
+  socket.on("change_username", (data) => {
+      socket.username = data.username;
+  });
+
+  // Order Id Channel
+  db.collection('cart').onSnapshot((snapshots) => {
+      snapshots.forEach((doc) => {
+          socket.on(doc.id, data => {
+              console.log(`Channel : ${doc.id} , ${data.message} - by ${socket.username}`)
+              socket.broadcast.emit(doc.id, { message: data.message, username: socket.username })
+          })
+      })
+  })
+
+  socket.on("typing", (data) => {
+      socket.broadcast.emit("typing", { username: socket.username });
   });
 });
 
