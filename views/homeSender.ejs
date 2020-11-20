@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title> </title>
     <!-- CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
     <link rel="stylesheet" type="text/css" href="/stylesheets/homeSender.css">
     <!--===============================================================================================-->
 
@@ -14,35 +17,39 @@
 
 <%- include ("layout.ejs") %>
 
-    <body>
+<body>
 
-        <div class="container">
+    <div class="container">
+        
+
             <% getOrder.forEach((order) => { %>
-                <div class="card-deck">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <%= order.store %>
-                            </h5>
-                            <p class="card-text">Order id :
-                                <%= order.orderId %>
-
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted"><%= order.hour %> | <%= order.userDate %></small>
-                            <a href="/homeSender/<%= order.orderId %>" class="btn btn-info float-right">
-            See More
-          </a>
-                        </div>
+                
+            <div class="card-deck">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%= order.store %>
+                        </h5>
+                        <p class="card-text">Order id :
+                            <%= order.orderId %>
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted"><%= order.hour %> | <%= order.userDate %></small>
+                        <a href="/homeSender/<%= order.orderId %>" class="btn btn-info float-right">
+                            See More
+                        </a>
                     </div>
                 </div>
-                <% }); %>
-        </div>
+            </div>
+       
+            <% }); %>
+        
+    </div>
 
-        <!-- Scripts -->
-        <script src="/javascripts/homeSender.js"></script>
-    </body>
+    <!-- Scripts -->
+    <script src="/javascripts/homeSender.js"></script>
+</body>
 
 
 </html>

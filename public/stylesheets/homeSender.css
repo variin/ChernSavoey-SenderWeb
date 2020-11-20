@@ -7,7 +7,54 @@
 /* #info-btn {
     align-content: center;
 } */
-.container{
-    margin-top: 15% !important;
-    
+.card-deck {
+    margin-top: 100px;
+}
+#detail.card {
+    margin-top: 50px;
+}
+#info-btn {
+    align-content: center;
+}
+
+.button {
+    display: inline-block;
+    border-radius: 15px;
+    background-color: #F7CC6F;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 18px;
+    width: 90%;
+    /* transition: all 0.5s; */
+    cursor: pointer;
+    margin: 5px;
+    margin-top: 90px;
+    margin-left: 5%;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
 }
