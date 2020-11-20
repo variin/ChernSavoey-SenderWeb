@@ -31,6 +31,47 @@ router.get('/:orderId', async function(req, res, next) {
 
 });
 
+router.post('/:orderId/chat', async function(req, res, next) {
+    const orderId = req.params.orderId;
+    const receiveId = req.body.receiveId; //ผู้รับข้อความ
+    const senderId = req.body.senderId; //ผู้ส่งข้อความ
+    const message = req.body.message;
+    const d = new Date();
+
+    const ref = db.collection('chat').doc(orderId)
+    console.log(req.body);
+
+    const chatRef = await ref.get().then((snapshot) => snapshot.data())
+
+    if (!chatRef.messages) {
+        await ref.set({
+            messages: []
+        })
+    }
+    let newChat = []
+    newChat = [...chatRef.messages, {
+        receiveId,
+        senderId,
+        message,
+        day: d,
+    }]
+
+    console.log("New Chat ", newChat)
+
+    await ref.update({
+        messages: newChat
+    })
+
+    return res.status(200);
+});
+
+
+router.get('/:orderId/chat', async function(req, res, next) {
+    const orderId = req.params.orderId;
+    res.render('chat', { orderId });
+});
+
+
 router.get('/order/update/:orderId/:senderId/:status', async function(req, res) {
     const orderId = req.params.orderId;
     const senderId = req.params.senderId;
