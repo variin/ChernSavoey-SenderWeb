@@ -1,0 +1,8 @@
+.card {
+    top: 50px;
+}
+
+.swal2-progress-steps .swal2-progress-step-line {
+    width: 2em;
+    /* height: 2em; */
+}

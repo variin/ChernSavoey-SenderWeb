@@ -121,3 +121,15 @@ li {
     padding: 33px 15px 33px 15px;
   }
 }
+
+.id{
+  padding-right: 50px;
+}
+
+.email{
+  padding-right: 5px;
+}
+
+.firstName .lastName{
+  padding-right: 50px;
+}
