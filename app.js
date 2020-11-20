@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-// const socket = require('socket.io');
+const socket = require('socket.io');
 const session = require('express-session');
 const bodyParser = require('body-parser')
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
@@ -20,7 +20,7 @@ const PORT = process.env.PORT || 5555;
 const server = app.listen(PORT, () => {
   console.log(`App running on port ${PORT}`);
 });
-// const io = socket(server);
+const io = socket(server);
 
 
 //use session
