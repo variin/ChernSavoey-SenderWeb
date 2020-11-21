@@ -3,55 +3,48 @@
 
 <head>
     <title>Chern Savoey Demo V.3</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link rel="icon" type="image/png" href="/images/icons/favicon.png" />
-    <link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/vendor/animate/animate.css">
-     <link rel="stylesheet" type="text/css" href="/vendor/css-hamburgers/hamburgers.min.css">
-    <link rel="stylesheet" type="text/css" href="/vendor/animsition/css/animsition.min.css">
-    <link rel="stylesheet" type="text/css" href="/vendor/select2/select2.min.css">
-    <link rel="stylesheet" type="text/css" href="/vendor/daterangepicker/daterangepicker.css">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/util.css">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-    <script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
-    <script src="/vendor/animsition/js/animsition.min.js"></script>
-    <script src="/vendor/bootstrap/js/popper.js"></script>
-    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script> 
-    <script src="/vendor/select2/select2.min.js"></script>
-    <script src="/vendor/daterangepicker/moment.min.js"></script>
-     <script src="/vendor/daterangepicker/daterangepicker.js"></script>
-    <script src="/vendor/countdowntime/countdowntime.js"></script>
-
+    <link href='https://fonts.googleapis.com/css?family=Kanit:400,300&subset=thai,latin' rel='stylesheet' type='text/css'>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0" http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/loginShop.css">
+    <!--===============================================================================================-->
 </head>
 
 <body>
-    <div class="limiter">
-        <div class="container-login100">
-            <div class="wrap-login100">
-                <!-- <img src="/images/icon_chsv.png" alt="chernsavoey-logo" style=""> -->
-                <h4>โปรดเข้าสู่ระบบด้วย
-                    <a href="https://sites.google.com/a/mail.kmutt.ac.th/kmutt-gapps-help-center/start-up">
-                        <br> KMUTT ACCOUNT</a> เพื่อใช้งาน </h4>
-
-                <!-- gg login btn -->
-
-                <div class="container-login100-form-btn">
-                    <div class="wrap-login100-form-btn">
-                        <div class="login100-form-bgbtn"></div>
-                        <button class="login100-form-btn">
-							<a href="/auth/google"> <i class= "fab fa-google"> </i> &nbsp Login with KMUTT Google ACCOUNT </a>
-						</button>
+    <div class="container">
+        <div class="forms-container">
+            <div class="signin-signup">
+                <form action="Login" class="sign-in-form" method="POST">
+                    <div class="limiter">
+                        <div class="container-login100">
+                            <div class="wrap-login100">
+                                <img src="/images/icon_chsv.png" alt="">
+                            </div>
+                        </div>
                     </div>
+                    <button class="btn solid">
+                        <a href="/auth/google"> <i class= "fab fa-google"> </i> Login with KMUTT Google ACCOUNT </a>
+                    </button>
+                    <p class="link-to-otherweb"> <a href="#">หากคุณต้องการเป็นผู้ส่งสินค้า</a></p>
+                    <p class="link-to-otherweb"> <a href="#">ระบบจัดการร้านค้า Chern Savoey</a></p>
+                </form>
+            </div>
+        </div>
+
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3 class="kmuttlogin-th">โปรดเข้าสู่ระบบด้วย KMUTT ACCOUNT เพื่อใช้งาน</h3>
+                    <p class="kmuttlogin-en">Please login with KMUTT ACCOUNT to use.</p>
+                    <p class="how-to-kmutt-login"> <a href="https://sites.google.com/a/mail.kmutt.ac.th/kmutt-gapps-help-center/start-up">
+                        คู่มือการเปิดใช้งาน KMUTT Google Account</a></p>
+                    <img src="/images/sender-vector.svg" alt="chernsavoey-logo">
                 </div>
             </div>
         </div>
     </div>
+    <script src="/javascripts/loginShop.js"></script>
+
 </body>
 
 </html>
