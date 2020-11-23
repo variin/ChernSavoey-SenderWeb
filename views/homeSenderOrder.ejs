@@ -25,13 +25,10 @@
                     <div class="col-sm-6">
                         <div class="card" id="detail">
                             <div class="card-body">
-                                <h5 class="card-title">
-                                    <%= orderDetail.menuName %>
-                                </h5>
-                                <p class="card-text">จำนวน:
-                                    <%= orderDetail.qty %> แก้ว | ราคา:
-                                        <%= orderDetail.price %> บาท</p>
-
+                                <h5 class="card-title">D'Oro</h5>
+                                <h5 class="card-title"><%= orderDetail.menuName %></h5>
+                                <p class="card-text">จำนวน: <%= orderDetail.qty %> แก้ว | ราคา: <%= orderDetail.price %> บาท</p>
+                                <p class="card-text">สถานที่จัดส่ง: N11อาคารคณะเทคโนโลยีสารสนเทศ School of Information Technology Building</p>
                                 <button type="button" class="btn btn-success" onclick="testSweet()">Confirm Order</button>
 
                             </div>
