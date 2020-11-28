@@ -1,4 +1,4 @@
-const socket = io.connect("https://sender-chernsavoey.herokuapp.com/");
+const socket = io.connect("https://chernsavoey.herokuapp.com/");
 let username = document.querySelector('#username');
 let usernameBtn = document.querySelector('#usernameBtn');
 let curUsername = document.querySelector('.card-header');
