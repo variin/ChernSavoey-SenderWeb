@@ -27,9 +27,14 @@ router.get("/:orderId", async(req, res) => {
         .then((querySnapshot) => querySnapshot.data());
     const orderList = orderDetail.order_detail;
     const location = orderDetail.Location;
+    const phoneno = orderDetail.cus_phoneno;
+    const customerName = orderDetail.customer;
+    const shopName = orderDetail.shopName;
+    const totalprice = orderDetail.totalPrice; 
+    const notetosender = orderDetail.note; 
     console.log(orderId);
     console.log(orderList);
-    res.render("orderdetail", {orderList,location});
+    res.render("orderdetail", {orderList,location,phoneno,customerName,shopName,totalprice,notetosender});
 });
 
 

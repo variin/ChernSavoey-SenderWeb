@@ -18,30 +18,28 @@
 <%- include ("layout.ejs") %>
 
 <body>
-   
+    
     <div class="container">
+        <div class="list-group">
             <% getOrder.forEach((order) => { %>
-            <div class="card-deck">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <!-- ใส่ชื่อร้าน -->
-                            <%= order.store %> 
-                        </h5>
-                        <p class="card-text">Order id :
-                            <%= order.order_id %>
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted"><%= order.order_Date %> | <%= order.order_Time %></small>
-                        <a href="/homeSender/<%= order.orderId %>" class="btn btn-info float-right">
-                            See More
-                        </a>
-                    </div>
-                </div>
+           
+            <div class="list-group-item list-group-item-action flex-column align-items-start">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1"><%= order.shopName %></h5>
+                <small class="text-muted">Order ID : <%= order.order_id %></small>
+              </div>
+              <p class="mb-1">สถานที่ส่ง : <%= order.Location %></p>
+              <small class="text-muted"><%= order.order_Date %> | <%= order.order_Time %></small>
+              <a href="/homeSender/<%= order.orderId %>" class="btn btn-success float-right">
+                See More
+            </a>
             </div>
-       
             <% }); %>
+          </div>
+           
+            
+       
+           
         
     </div>
 

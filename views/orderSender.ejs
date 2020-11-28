@@ -20,8 +20,7 @@
                     <ul>
                         <li>
                             <a>
-                                <h2>Menu</h2>
-                                <h2 class="storeName">Store :</h2>
+                                <h2 class="storeName"><%= shopName %></h2>
                                 <!-- table head -->
                             <table>
                                     <tr>
@@ -38,20 +37,23 @@
                                 <% }); %>
                                 <tr>
                                     <td colspan="2"  style="color: dimgrey;">Delivery Fee</td>
-                                    <td style="color: dimgrey;">10 Baht</td>
+                                    <td style="color: dimgrey;">฿10</td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">Total :</div></td>
-                                    <td>60 Baht</td>
+                                    <td><%= totalprice %></td>
                                 </tr>
                                 <tr>
-                                    <td colspan="3">Delivery to : N11 อาคารคณะเทคโนโลยีสารสนเทศ. School of Information Technology Building</div></td>
+                                    <td colspan="3">Delivery to : <%= location %></td>
                                 </tr>
                                 <tr>
-                                    <td colspan="3">Description : หวานน้อย</td>
+                                    <td colspan="3">Description : <%= notetosender %></td>
                                 </tr>
                                 <tr>
-                                    <td colspan="3">Customer Name : Sirirat t.</td>
+                                    <td colspan="3">Customer Name : <%= customerName.displayName %></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">Customer Tel. : <%= phoneno %></td>
                                 </tr>
                             </table>
                         </li>

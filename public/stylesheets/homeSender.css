@@ -1,5 +1,6 @@
 .container {
     margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 .card-deck {
@@ -45,14 +46,7 @@
     transition: 0.5s;
 }
 
-.button:hover span {
-    padding-right: 25px;
-}
 
-.button:hover span:after {
-    opacity: 1;
-    right: 0;
-}
 
   /* Responsive columns - one column layout (vertical) on small screens */
   @media screen and (max-width: 600px) {

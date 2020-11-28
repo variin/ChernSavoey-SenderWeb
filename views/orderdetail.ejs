@@ -18,34 +18,83 @@
 
 <%- include ("layout.ejs") %>
 
-    <body>
-        <div class="container">
-            <div class="row">
-                
-                    <div class="col-sm-6">
-                        <div class="card" id="detail">
-                            <div class="card-body">
-                                <h5 class="card-title">D'Oro (ชื่อร้าน)</h5>
-                                <p class="card-text">สถานที่จัดส่ง: <%= location %> </p>
-                                <% orderList.forEach((orderDetail) => { %>
-                                <h5 class="card-title"><%= orderDetail.menuName %></h5>
-                                <p class="card-text">จำนวน: <%= orderDetail.qty %> แก้ว | ราคา: <%= orderDetail.price %> บาท</p>
-                                 <% }); %>
-                                <button type="button" class="btn btn-success" onclick="testSweet()">Confirm Order</button>
+<body>
+    <div class="container">
 
-                            </div>
-                        </div>
-                    </div>
-                  
-            </div>
-        </div>
+        <table class="main" width="100%" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="content-wrap aligncenter">
+                        <table width="100%" cellpadding="0" cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <td class="content-block">
+                                        <h2><%= shopName %></h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="content-block">
+                                        <table class="invoice">
+                                            <tbody>
+                                                <tr>
+                                                    <td>ชื่อผู้สั่ง: <%= customerName.displayName %> <br>เบอร์โทรศัพท์: <%= phoneno %> <br>สถานที่จัดสั่ง: <%= location %><br>ข้อความจากผู้สั่ง: <%= notetosender %></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <table class="invoice-items" cellpadding="0" cellspacing="0">
+                                                            <tbody>
+                                                                <thead class="font-weight-bold">
+                                                                    <td>Menu</td>
+                                                                    <td class="alignright">qty</td>
+                                                                    <td class="alignright">Price</td>
+                                                                </thead>
+                                                                <% orderList.forEach((orderDetail) => { %>
+                                                                <tr>
+                                                                    <td><%= orderDetail.menuName %></td>
+                                                                    <td class="alignright"><%= orderDetail.qty %></td>
+                                                                    <td class="alignright"><%= orderDetail.price %></td>
+                                                                </tr>
+                                                                <% }); %>
+                                                                <tr class="font-weight-bold">
+                                                                    <td></td>
+                                                                    <td class="alignright">Delivery fee</td>
+                                                                    <td class="alignright">฿ 10</td>
+                                                                </tr>
+                                                                <tr class="total">
+                                                                    <td></td>
+                                                                    <td class="alignright">Total</td>
+                                                                    <td class="alignright"><%= totalprice %></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="content-block">
+                                        <button type="button" class="btn btn-success" onclick="testSweet()">Confirm Order</button>
+
+                                    </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
 
 
 
 
-        <!-- Sweetalret2 script -->
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-        <script src="/javascripts/homeSenderOrder.js"></script>
-    </body>
+    <!-- Sweetalret2 script -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="/javascripts/homeSenderOrder.js"></script>
+</body>
 
 </html>

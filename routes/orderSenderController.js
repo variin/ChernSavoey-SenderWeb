@@ -16,10 +16,14 @@ router.get('/:orderId', async function (req, res, next) {
         .then((querySnapshot) => querySnapshot.data());
     const orderList = orderDetail.order_detail;
     const location = orderDetail.Location;
+    const phoneno = orderDetail.cus_phoneno;
+    const customerName = orderDetail.customer;
+    const shopName = orderDetail.shopName;
+    const totalprice = orderDetail.totalPrice; 
+    const notetosender = orderDetail.note; 
     console.log(orderId);
     console.log(orderList);
-    res.render("orderSender", {orderList,location});
-
+    res.render("orderSender", {orderList,location,phoneno,customerName,shopName,totalprice,notetosender});
 
 });
 
