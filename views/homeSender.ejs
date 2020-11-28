@@ -11,31 +11,29 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     
     <link rel="stylesheet" type="text/css" href="/stylesheets/homeSender.css">
-    <!--===============================================================================================-->
+  
 
 </head>
 
 <%- include ("layout.ejs") %>
 
 <body>
-
+   
     <div class="container">
-        
-
             <% getOrder.forEach((order) => { %>
-                
             <div class="card-deck">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">
-                            <%= order.store %>
+                            <!-- ใส่ชื่อร้าน -->
+                            <%= order.store %> 
                         </h5>
                         <p class="card-text">Order id :
-                            <%= order.orderId %>
+                            <%= order.order_id %>
                         </p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted"><%= order.hour %> | <%= order.userDate %></small>
+                        <small class="text-muted"><%= order.order_Date %> | <%= order.order_Time %></small>
                         <a href="/homeSender/<%= order.orderId %>" class="btn btn-info float-right">
                             See More
                         </a>

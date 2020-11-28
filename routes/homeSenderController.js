@@ -20,14 +20,16 @@ router.get("/", async(req, res) => {
 
 router.get("/:orderId", async(req, res) => {
     const orderId = req.params.orderId;
-    const orderDetails = await db.collection("cart")
+
+    const orderDetail = await db.collection("cart")
         .doc(orderId)
         .get()
         .then((querySnapshot) => querySnapshot.data());
-    const orderList = orderDetails.detailOrder;
+    const orderList = orderDetail.order_detail;
+    const location = orderDetail.Location;
     console.log(orderId);
     console.log(orderList);
-    res.render("homeSenderOrder", { orderList });
+    res.render("orderdetail", {orderList,location});
 });
 
 

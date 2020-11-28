@@ -20,7 +20,7 @@ function testSweet() {
             ).then(() => {
 
                 //TODO: get sender id from user login
-                const senderId = "123";
+                const senderId = "Plase Wait";
                 const orderIdPath = window.location.pathname.split("/")
                 const orderId = orderIdPath[2]
                 console.log("Senddddd 1")
