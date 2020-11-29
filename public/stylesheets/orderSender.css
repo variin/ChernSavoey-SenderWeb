@@ -6,19 +6,15 @@
     .font {
         font-family: kanit;
     }
-    /* .swal2-progress-steps .swal2-progress-step-line {
-        width: 2em;
-    } */
-    
-    .swal2-progress-steps .swal2-progress-step-line {
+     .swal2-progress-steps .swal2-progress-step-line {
         z-index: 10;
         flex-shrink: 0;
         width: 2.5em;
         height: .4em;
         margin: 0 -30px;
         background: #2778c4;
-    }
-    
+    } 
+
     .swal2-progress-steps {
         flex-wrap: wrap;
         align-items: center;
