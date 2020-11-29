@@ -1,144 +1,20 @@
-/*//////////////////////////////////////////////////////////////////
-/*
-Font Name: Anuphan
-Weights: 400, 500, 700
-*/
-@font-face {
-    font-family: "Anuphan";
-    src: url("../fonts/anuphan.woff2") format("woff2"),
-      url("../fonts/anuphan.woff") format("woff");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Anuphan";
-    src: url("../fonts/anuphan-medium.woff2") format("woff2"),
-      url("../fonts/anuphan-medium.woff") format("woff");
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Anuphan";
-    src: url("../fonts/anuphan-bold.woff2") format("woff2"),
-      url("../fonts/anuphan-bold.woff") format("woff");
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-  }
-  /*//////////////////////////////////////////////////////////////////
-    [ RESTYLE TAG ]*/
-  
-  /*//////////////////////////////////////////////////////////////////
-  /*
-  Font Name: Anuphan
-  Weights: 400, 500, 700
-  */
-  @font-face {
-    font-family: "Anuphan";
-    src: url("../fonts/anuphan.woff2") format("woff2"),
-      url("../fonts/anuphan.woff") format("woff");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Anuphan";
-    src: url("../fonts/anuphan-medium.woff2") format("woff2"),
-      url("../fonts/anuphan-medium.woff") format("woff");
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Anuphan";
-    src: url("../fonts/anuphan-bold.woff2") format("woff2"),
-      url("../fonts/anuphan-bold.woff") format("woff");
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400&display=swap');
+
 .list-item__thumbnail {
     width: 30px;
-}
-
-.navbar {
-    font-family: "Anuphan";
-    overflow: hidden;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-#top {
-    background-image: linear-gradient(to right, #1d617a, #61c2a2);
-}
-
-.navbar.fixed-bottom {
-    overflow: hidden;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-#bottom {
-    background-color: #143130 !important;
-    font-family: kanit;
-    color: aliceblue;
-}
-
-
-
-
-/* .col-lg-4.col-md-6.mb-4 {
-  margin-top: 97px;
+  }
   
-} */
+nav {
+    font-family: 'Kanit' !important;
+}
 
+#navbar {
+  background-image: linear-gradient(to right, #1d617a, #61c2a2);
+}
 
-/* .nav-link {
-  color: aliceblue;
-  font-family: kanit;
-  text-indent: 20px;
-} */
-
-
-/* .navbar .navbar-light.bg-light {
-
-} */
-
-
-/* Style the links inside the navigation bar */
-
-.navbar a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 1px;
-    text-decoration: none;
-    font-size: 17pt;
+#navbar a  {
     margin-left: 20px;
+    color: aliceblue ;
 }
 
 
-
-/* Change the color of links on hover */
-
-.navbar a:hover {
-    color: aliceblue;
-    text-decoration: none;
-}
-
-
-/* #search {
-  margin-top: 0px !important;
-  margin-bottom: 0px !important;
-  margin-right: 0px !important;
-  margin-left: 0px !important;
-} */
-
-.form-control {
-    width: 50% !important;
-}
