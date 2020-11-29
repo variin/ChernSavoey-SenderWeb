@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <link href='https://fonts.googleapis.com/css?family=Kanit:400,300&subset=thai,latin' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Kanit:400,300&subset=thai,latin' rel='stylesheet'
+        type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css">
@@ -15,64 +16,79 @@
 <body>
 
     <%- include ("layout.ejs") %>
-        <div class="container font">
-                <div class="d-flex justify-content-center">
-                    <ul>
-                        <li>
-                            <a>
-                                <h2 class="storeName"><%= shopName %></h2>
-                                <!-- table head -->
-                            <table>
-                                    <tr>
-                                        <td><div style="margin-left: 50px;">Menu</div></td>
-                                        <td><div style="margin-left: 60px;">Quantity</div></td>
-                                        <td><div style="margin-left: 35px;">Price</div></td>
-                                    </tr>
-                                <% orderList.forEach((orderDetail) => { %>
-                                    <tr>
-                                        <td><div style="margin-left: 10px;"><%= orderDetail.menuName %></div></td>
-                                        <td><div style="margin-left: 80px;"><%= orderDetail.qty %></div></td>
-                                        <td><div style="margin-left: 40px;"><%= orderDetail.price %></div></td>
-                                    </tr>
-                                <% }); %>
-                                <tr>
-                                    <td colspan="2"  style="color: dimgrey;">Delivery Fee</td>
-                                    <td style="color: dimgrey;">฿10</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">Total :</div></td>
-                                    <td><%= totalprice %></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="3">Delivery to : <%= location %></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="3">Description : <%= notetosender %></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="3">Customer Name : <%= customerName %></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="3">Customer Tel. : <%= phoneno %></td>
-                                </tr>
-                            </table>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="d-flex justify-content-center">
-                    <div class="buttonUpdate">
-                        <button type="button" class="btn btn-warning" onclick="updateStatus()">Update Status</button>
-                    </div>
-                    <div class="buttonChat">
-                        <a href="<%=orderId%>/chat" type="button" class="btn btn-success" style="color: beige;">Chat with Customer</a>
-                    </div>
-                       
-                </div>
+    <div class="container font">
+        <div class="d-flex justify-content-center">
+            <ul>
+                <li>
+                    <a>
+                        <h2 class="storeName"><%= shopName %></h2>
+                        <!-- table head -->
+                        <table>
+                            <tr>
+                                <td>
+                                    <div style="margin-left: 50px;">Menu</div>
+                                </td>
+                                <td>
+                                    <div style="margin-left: 60px;">Quantity</div>
+                                </td>
+                                <td>
+                                    <div style="margin-left: 35px;">Price</div>
+                                </td>
+                            </tr>
+                            <% orderList.forEach((orderDetail) => { %>
+                            <tr>
+                                <td>
+                                    <div style="margin-left: 10px;"><%= orderDetail.menuName %></div>
+                                </td>
+                                <td>
+                                    <div style="margin-left: 80px;"><%= orderDetail.qty %></div>
+                                </td>
+                                <td>
+                                    <div style="margin-left: 40px;"><%= orderDetail.price %></div>
+                                </td>
+                            </tr>
+                            <% }); %>
+                            <tr>
+                                <td colspan="2" style="color: dimgrey;">Delivery Fee</td>
+                                <td style="color: dimgrey;">฿10</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">Total :
         </div>
-        <!-- Sweetalret2 script -->
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-        <script src="/javascripts/orderSender.js"></script>
+        </td>
+        <td><%= totalprice %></td>
+        </tr>
+        <tr>
+            <td colspan="3">Delivery to : <%= location %></td>
+        </tr>
+        <tr>
+            <td colspan="3">Description : <%= notetosender %></td>
+        </tr>
+        <tr>
+            <td colspan="3">Customer Name : <%= customerName %></td>
+        </tr>
+        <tr>
+            <td colspan="3">Customer Tel. : <%= phoneno %></td>
+        </tr>
+        </table>
+        </li>
+        </ul>
+    </div>
+    <br> <br>
+    <div class="d-flex justify-content-center">
+        <div class="buttonUpdate">
+            <button type="button" class="btn btn-warning" onclick="updateStatus()">Update Status</button>
+        </div>
+        <div class="buttonChat">
+            <a href="<%=orderId%>/chat" type="button" class="btn btn-success" style="color: beige;">Chat with
+                Customer</a>
+        </div>
+
+    </div>
+    </div>
+    <!-- Sweetalret2 script -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="/javascripts/orderSender.js"></script>
 </body>
 
 </html>
