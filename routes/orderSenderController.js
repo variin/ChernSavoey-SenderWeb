@@ -23,7 +23,7 @@ router.get('/:orderId', async function (req, res, next) {
     const notetosender = orderDetail.note; 
     console.log(orderId);
     console.log(orderList);
-    res.render("orderSender", {orderList,location,phoneno,customerName,shopName,totalprice,notetosender});
+    res.render("orderSender", {orderList,location,phoneno,customerName,shopName,totalprice,notetosender,orderId});
 
 });
 
@@ -64,7 +64,17 @@ router.post('/:orderId/chat', async function (req, res, next) {
 
 router.get('/:orderId/chat', async function (req, res, next) {
     const orderId = req.params.orderId;
-    res.render('chat', { orderId });
+    const orderDetail = await db.collection("cart")
+        .doc(orderId)
+        .get()
+        .then((querySnapshot) => querySnapshot.data());
+    
+    const phoneno = orderDetail.cus_phoneno;
+    const customerName = orderDetail.customer;
+    
+    console.log(orderId);
+    res.render("chat", {phoneno,customerName,orderId, user: req.user});
+
 });
 
 

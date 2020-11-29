@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" /> -->
+    <link rel="icon" type="image/png" href="/images/favicon.png"/>
     <!-- CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/chat.css">
 
-    <title>Real time Chat </title>
+    <title> Chat </title>
 
 </head>
 
@@ -20,7 +20,7 @@
 
     <div class="chat_window">
         <div class="top_menu">
-            <a href="/chat">
+            <a href="/orderSender/<%= orderId %>">
                 <div class="buttons">
                     <div class="button close"></div>
             </a>
@@ -29,12 +29,12 @@
         </div>
 
         <div class="card">
-            <div class="card-header">Anonymous
+            <div class="card-header"> You chat with: <%=customerName%>
                 <div class="input-group">
-                    <input type="text" class="form-control" id="username" placeholder="Change your username" />
+                    <input type="text" class="form-control" id="username" placeholder="Change your username"  value="Hello <%= user.displayName %>"/>
                     <div class="input-group-append">
-                        <button class="btn btn-warning" type="button" id="usernameBtn">
-                            Change
+                        <button class="btn btn-warning" type="button" id="usernameBtn" disabled>
+                            <a href="tel:+66<%=phoneno%>" style="color: black;">Tel.</a>
                         </button>
                     </div>
                 </div>
@@ -50,6 +50,7 @@
 
         <ul class="messages"></ul>
         <div class="bottom_wrapper clearfix">
+           
             <div class="message_input_wrapper">
                 <input type="hidden" id="orderId" value="<%= orderId %>">
                 <input type="text" class="message_input" id="message" placeholder="Type your message here...">

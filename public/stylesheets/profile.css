@@ -30,6 +30,38 @@ Weights: 400, 500, 700
 /*//////////////////////////////////////////////////////////////////
   [ RESTYLE TAG ]*/
 
+/*//////////////////////////////////////////////////////////////////
+/*
+Font Name: Anuphan
+Weights: 400, 500, 700
+*/
+@font-face {
+  font-family: "Anuphan";
+  src: url("../fonts/anuphan.woff2") format("woff2"),
+    url("../fonts/anuphan.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Anuphan";
+  src: url("../fonts/anuphan-medium.woff2") format("woff2"),
+    url("../fonts/anuphan-medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Anuphan";
+  src: url("../fonts/anuphan-bold.woff2") format("woff2"),
+    url("../fonts/anuphan-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+/*//////////////////////////////////////////////////////////////////
+  [ RESTYLE TAG ]*/
+
 * {
   margin: 0px;
   padding: 0px;
@@ -82,24 +114,17 @@ li {
 /* ////////////////////////////////////////////////////////////////// */
 
 .container-login100 {
-  width: 100%;
+  width: auto;
   min-height: auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background: #f2f2f2;
-  cursor: pointer;
-  margin-top: 90px;
 
 }
 
 .wrap-login100 {
+  margin: auto;
   width: auto;
   background: #fff;
   border-radius: 10px;
@@ -120,16 +145,4 @@ li {
   .wrap-login100 {
     padding: 33px 15px 33px 15px;
   }
-}
-
-.id{
-  padding-right: 50px;
-}
-
-.email{
-  padding-right: 5px;
-}
-
-.firstName .lastName{
-  padding-right: 50px;
 }

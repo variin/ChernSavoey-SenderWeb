@@ -1,6 +1,69 @@
+/*//////////////////////////////////////////////////////////////////
+/*
+Font Name: Anuphan
+Weights: 400, 500, 700
+*/
+@font-face {
+    font-family: "Anuphan";
+    src: url("../fonts/anuphan.woff2") format("woff2"),
+      url("../fonts/anuphan.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Anuphan";
+    src: url("../fonts/anuphan-medium.woff2") format("woff2"),
+      url("../fonts/anuphan-medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Anuphan";
+    src: url("../fonts/anuphan-bold.woff2") format("woff2"),
+      url("../fonts/anuphan-bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  /*//////////////////////////////////////////////////////////////////
+    [ RESTYLE TAG ]*/
+  
+  /*//////////////////////////////////////////////////////////////////
+  /*
+  Font Name: Anuphan
+  Weights: 400, 500, 700
+  */
+  @font-face {
+    font-family: "Anuphan";
+    src: url("../fonts/anuphan.woff2") format("woff2"),
+      url("../fonts/anuphan.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Anuphan";
+    src: url("../fonts/anuphan-medium.woff2") format("woff2"),
+      url("../fonts/anuphan-medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Anuphan";
+    src: url("../fonts/anuphan-bold.woff2") format("woff2"),
+      url("../fonts/anuphan-bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
 .container {
-    margin-top: 100px;
-    margin-bottom: 100px;
+    font-family: "Anuphan";
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .card-deck {
