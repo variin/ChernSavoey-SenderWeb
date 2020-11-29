@@ -3,7 +3,7 @@ const db = require('../model/db');
 
 var router = express.Router();
 
-router.get('/myOreder', async function (req, res, next) {
+router.get('/myOrder', async function (req, res, next) {
     res.render('orderSender');
 });
 
@@ -80,7 +80,7 @@ router.get('/order/update/:orderId/:senderId/:status', async function (req, res)
     const orderDetails = await db.collection("cart")
         .doc(orderId)
         .update({
-            senderId: {user:req.user},
+            senderId: req.user.displayName,
             status: status
         }).then((data) => {
             console.log("Update Complate")

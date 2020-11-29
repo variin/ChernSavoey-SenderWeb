@@ -31,8 +31,6 @@ function testSweet() {
                         window.location.href = `/orderSender/${orderId}`;
                     })
                     .catch((err) => console.log('err ' + err))
-
-
             })
         } else {
             Swal.fire('', 'You are deny this order', 'error')
