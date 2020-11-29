@@ -220,6 +220,10 @@ a {
 }
 
 .swal2-progress-steps .swal2-progress-step-line {
-    width: 2em;
-    /* height: 2em; */
+    z-index: 10;
+    flex-shrink: 0;
+    width: 2.5em;
+    height: .4em;
+    margin: 0 -30px;
+    background: #2778c4;
 }
