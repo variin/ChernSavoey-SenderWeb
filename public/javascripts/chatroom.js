@@ -51,7 +51,7 @@ let curUsername = document.querySelector('.card-header');
     })
 
     socket.on('typing', data => {
-        info.textContent = data.username + " is typing..."
+        info.textContent = " is typing..."
         setTimeout(() => { info.textContent = '' }, 5000)
     })
 })();
