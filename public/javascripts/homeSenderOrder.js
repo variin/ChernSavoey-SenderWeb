@@ -25,7 +25,7 @@ function testSweet() {
                 const orderId = orderIdPath[2]
                 console.log("Senddddd 1")
 
-                fetch(`/orderSender/order/update/${orderId}/${senderId}/accepted`)
+                fetch(`/orderSender/order/update/${orderId}/${senderId}/waiting for sender`)
                     .then((data) => {
                         console.log("Senddddd 2")
                         window.location.href = `/orderSender/${orderId}`;

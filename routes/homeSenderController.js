@@ -7,7 +7,7 @@ var router = express.Router();
 
 router.get("/", async(req, res) => {
     const getOrder = await db
-        .collection("cart").where('status', '==', 'accepted')
+        .collection("cart").where('status', '==', 'waiting for sender')
         .get().then((querySnapshot) => {
             let orderArr = [];
             querySnapshot.forEach((cart) => orderArr.push({ orderId: cart.id, ...cart.data() }));
